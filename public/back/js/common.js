@@ -23,5 +23,61 @@ $(document).ajaxStop(function(){
 });
 
 
+//首页的二级菜单展示或者隐藏通过js完成
+//1.给左侧栏 通过jq添加动画
+// 公用的功能:
+// 1. 左侧二级菜单的切换
+// 2. 左侧整体菜单的切换
+// 3. 公共的退出功能 
+$(function(){
+//1.左侧二级菜单的切换
+$(".lt_aside .category").click(function(){
+    //找到下一个兄弟元素,做动画显示
+    $(this).next().stop().slideToggle();
+})
+
+
+//2.点击按钮,左边的侧边栏隐藏  右边的补过来
+$(".lt_topbar .icon_menu").click(function(){
+    $(".lt_aside").toggleClass("hidemenu");
+    $(".lt_main").toggleClass("hidemenu");
+    $(".lt_topbar").toggleClass("hidemenu");
+})
+
+//3.点击退出按钮,弹出模态框,判断时候退出或者取消
+$(".lt_topbar .icon_logout").click(function(){
+    console.log(111);
+    
+    $("#logoutModal").modal("show");
+})
+//4.点击退出按钮.发送求情,退出模态框,跳到登录页面
+$("#logoutBtn").click(function(){
+    $.ajax({
+        type:"get",
+        url:"/employee/employeeLogout",
+        success:function(info){
+            if(info.success){
+                location.href="login.html";
+            }
+        }
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})
+
 
 

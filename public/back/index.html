@@ -30,7 +30,7 @@
             <ul>
                 <li><a href="#"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
                 <li>
-                    <a href="javascript:;">
+                    <a class="category" href="javascript:;">
                         <i class="glyphicon glyphicon-list"></i>
                         <span>分类管理</span>
                     </a>
@@ -66,13 +66,30 @@
 
 
 
-
-
-
-
-
-
-
+    <!-- 点击突出按钮弹出的模态框   插件-->
+    <!-- 模态框 -->
+    <!-- 调整模态框大小  默认中等
+       1. modal-lg  大模态框
+       2. modal-sm  小模态框
+       外层蒙层, 内层模态框, 类加给内层
+     -->
+    <div class="modal fade" tabindex="-1" id="logoutModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</span></button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- 引入jq插件 -->
     <script src="./lib/jquery/jquery.min.js"></script>
@@ -82,7 +99,9 @@
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <!--  引入进度条的插件-->
     <script src="./lib/nprogress/nprogress.js"></script>
-    <!-- 发送ajax请求控制进度条   以及登陆拦截-->
+    <!--  以及登陆拦截-->
+    <script src="./js/isLogin.js"></script>
+    <!-- 二级菜单的显示隐藏  以及主体部分发送ajax请求控制进度条   -->
     <script src="./js/common.js"></script>
 </body>
 

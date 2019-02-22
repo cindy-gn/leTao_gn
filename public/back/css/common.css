@@ -46,11 +46,13 @@ ul{
      /*  右边的部分 会把左边的部分盖上,所以应该左边的层级比右
     边的层级高给左边整体的侧边栏加层级 z-index*/
     z-index: 999;
+    transition:all 1s;
+
 }
 /* 点击左边的图标  左边的侧边栏 隐藏, 
 有动画效果 直接添加类名*/
 .lt_aside.hidemenu{
-    padding-left: -180px;
+    left: -180px;
 }
 .lt_aside .brand{
     height: 50px;
@@ -122,9 +124,11 @@ ul{
     background-color: pink;
     /* 因为头部用了 固定定位,需要把上面的内容挤下来用padding*/
     padding-top: 50px;
+    transition:all 1s;
 }
 .lt_main.hidemenu{
     padding-left: 0px;
+    
 }
 /* 下面部分滚动的时候,头部的内容不能进行滚动,要固定定位 */
 .lt_main .lt_topbar{
@@ -140,6 +144,8 @@ ul{
     
     /*  右边的部分 会把左边的部分盖上,所以应该左边的层级比右
     边的层级高给左边整体的侧边栏加层级 z-index*/
+    transition:all 1s;
+
 }
 /* 点击左边的图标左边的侧边栏 隐藏, 右边的内容需要把左边的占满
 有动画效果 直接添加类名*/
@@ -159,6 +165,11 @@ ul{
 .lt_main .breadcrumb a{
     color: #337AB7;
 
+}
+
+/* 模态框提示信息 */
+.modal-body p{
+    color: #A94442;
 }
 
 
