@@ -31,6 +31,10 @@ $(function () {
                         min: 2,
                         max: 6,
                         message: "用户名必须在2-6位之间"
+                    },
+                    // callback 专门用于配置回调提示消息和下面的登录失败的回调函数callback  一样
+                    callback: {
+                        message: "用户名不存在"
                     }
                 }
             },
@@ -44,6 +48,10 @@ $(function () {
                         min: 6,
                         max: 12,
                         message: "密码必须是6-12位"
+                    },
+                    // callback 专门用于配置回调提示消息
+                    callback: {
+                        message: "密码错误"
                     }
                 }
             }
@@ -79,14 +87,16 @@ $(function () {
                 if (info.error == 1000) {
                     //    alert("用户名不存在");
                     // updateStatus
-                    // 参数1: 字段名称
-                    // 参数2: 校验状态
-                    // 参数3: 校验规则, 可以设置提示文本
+                    // 调用插件实例方法, 更新username字段状态成失败状态
+                    // updateStatus( field, status, validator );
+                    // 参数1: 需要更新的字段名称
+                    // 参数2: 需要更新成的状态  VALID 成功  INVALID 失败
+                    // 参数3: 配置校验规则, 将来会用配置的规则的 message 进行提示
                     $("#form").data("bootstrapValidator").updateStatus("usrname", "INVALID", "callback")
                 }
                 if (info.error == 1001) {
                     // alert("密码错误");
-                    $("#form").data("bootstrapValidator").updateStatus("password","INVALID","callback")
+                    $("#form").data("bootstrapValidator").updateStatus("password", "INVALID", "callback")
                 }
                 if (info.success) {
                     location.href = "index.html"
@@ -98,10 +108,16 @@ $(function () {
 
 
     //3.重置表单
-    $("[type='reset']").on("click",function(){
-        console.log(1111);
-        
-    $("#form").data("bootstrapValidator").resetForm();
+    // 表单重置也已用resetFile  也可以用resetFrom reset本身就有重置表单内容的功能
+    //所以此时只需要重置提示符号的状态即可resetForm() 里面就不用写参数布尔值
+    // 3. 表单重置功能
+    //    reset 按钮, 本身就可以重置内容, 所以此时只需要重置状态即可
+    //    resetForm(false);  只重置状态
+    //    resetForm(true);   重置内容和状态
+    $("[type='reset']").on("click", function () {
+        // console.log(1111);
+
+        $("#form").data("bootstrapValidator").resetForm();
 
     })
 
