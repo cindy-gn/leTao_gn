@@ -172,6 +172,14 @@ ul{
     color: #A94442;
 }
 
+/* 右边的内容部分  左右浮动  各占48% */
+.echarts_right,
+.echarts_left{
+    width: 48%;
+    height: 400px;
+    background-color: skyblue;
+}
+
 
 
 

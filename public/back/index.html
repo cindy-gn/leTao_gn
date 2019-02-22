@@ -59,6 +59,11 @@
                 <li class="active">首页</li>
             </ol>
         </div>
+        <div class="lt_content">
+            <!-- 右边的内容部分  左右浮动  各占48% -->
+            <div class="echarts_left pull-left"></div>
+            <div class="echarts_right pull-right"></div>
+        </div>
 
 
     </div>
@@ -101,8 +106,12 @@
     <script src="./lib/nprogress/nprogress.js"></script>
     <!--  以及登陆拦截-->
     <script src="./js/isLogin.js"></script>
+    <!-- 引入数据可视化的插件 -->
+    <script src="./lib/echarts/echarts.min.js"></script>
     <!-- 二级菜单的显示隐藏  以及主体部分发送ajax请求控制进度条   -->
     <script src="./js/common.js"></script>
+    <!-- 首页的数据可视化 -->
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
