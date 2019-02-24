@@ -20,7 +20,7 @@ $(function () {
             },
             // dataType:"json",
             success: function (info) {
-                console.log(info);
+                // console.log(info);//获取到的数据就是一个对象  不用转换
                 // 将数据与模板进行绑定  
                 //参数1:  是模板的id  
                 //参数2:  是返回来的数据
