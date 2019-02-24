@@ -55,6 +55,7 @@ $("#logoutBtn").click(function(){
     $.ajax({
         type:"get",
         url:"/employee/employeeLogout",
+        dataType:"json",
         success:function(info){
             if(info.success){
                 location.href="login.html";

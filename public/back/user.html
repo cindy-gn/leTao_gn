@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <!-- 自己的css样式 -->
   <link rel="stylesheet" href="./css/common.css">
-  <title>登录页面</title>
+  <title>用户页面</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
   <div class="lt_aside">
     <!-- 标题 -->
     <div class="brand">
-      <a href="#">黑马35期</a>
+      <a href="index.html">黑马35期</a>
     </div>
     <!-- 管理员头像信息 -->
     <div class="user">
@@ -31,18 +31,18 @@
     <!-- 菜单导航部分 -->
     <div class="nav">
       <ul>
-        <li><a href="#"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+        <li><a href="user.html" class="current"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
         <li>
-          <a href="javascript:;" class="categroy">
+          <a href="javascript:;" class="category">
             <i class="glyphicon glyphicon-list"></i>
             <span>分类管理</span>
           </a>
           <div class="child">
-            <a href="#" class="first">一级分类</a>
-            <a href="#" class="second">二级分类</a>
+            <a href="first.html" class="first">一级分类</a>
+            <a href="second.html" class="second">二级分类</a>
           </div>
         </li>
-        <li><a href="#"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+        <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
       </ul>
     </div>
   </div>
@@ -65,11 +65,11 @@
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th width="10%">序号</th>
-              <th width="20%">用户名</th>
-              <th width="30%">手机号</th>
-              <th width="20%">状态</th>
-              <th width="20%">操作</th>
+              <th>序号</th>
+              <th>用户名</th>
+              <th>手机号</th>
+              <th>状态</th>
+              <th>操作</th>
             </tr>
           </thead>
           <tbody>
@@ -101,9 +101,14 @@
   <script type="text/html" id="tpl">
     {{ each rows v i }}
     <tr>
+      <!-- i+1表示当前页第几条 + 前面页有多少条 (page-1)*size -->
       <td>{{ (page-1)*size + i+1 }}</td>
       <td>{{v.username}}</td>
       <td>{{v.mobile}}</td>
+      <!-- 1 一般都是正面的状态 0 负面的状态
+             1 表示正常启用,  0 表示该用户已禁用
+             isDelete: 1/0
+        -->
       <td>{{v.isDelete===1?"正常":"禁用"}}</td>
       <td data-id="{{v.id}}">
         {{if v.isDelete===1}}
@@ -115,26 +120,26 @@
     </tr>
     {{/each}}
   </script>
-    <!-- 模态框部分  再bootstrap  插件里面 
+  <!-- 模态框部分  再bootstrap  插件里面 
         这个是按钮禁用  启用按钮 显示的模态框
     -->
-    <div class="modal fade" tabindex="-1" id="userModal">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</span></button>
-            <h4 class="modal-title">温馨提示</h4>
-          </div>
-          <div class="modal-body">
-            <p class="red"><i class="glyphicon glyphicon-info-sign"></i> 您确定要执行此操作吗?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-primary" id="submitBtn">确定</button>
-          </div>
+  <div class="modal fade" tabindex="-1" id="userModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</span></button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p class="red"><i class="glyphicon glyphicon-info-sign"></i> 您确定要执行此操作吗?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" id="submitBtn">确定</button>
         </div>
       </div>
     </div>
+  </div>
 
   <!-- 模态框部分  再bootstrap  插件里面 
     这个是点击退出按钮  显示的模态框-->
@@ -155,15 +160,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
 
 
 

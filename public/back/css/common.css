@@ -121,7 +121,7 @@ ul{
 .lt_main{
     padding-left: 180px;
     height: 2000px;
-    background-color: pink;
+    /* background-color: pink; */
     /* 因为头部用了 固定定位,需要把上面的内容挤下来用padding*/
     padding-top: 50px;
     transition:all 1s;
@@ -177,11 +177,15 @@ ul{
 .echarts_left{
     width: 48%;
     height: 400px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
 
-
-
+/* 设置类名  让这个用户页面的表格内容居中 */
+.lt_content .table.table-bordered th,
+.lt_content .table.table-bordered td{
+    text-align: center;
+    vertical-align: middle;
+}
 
 
 
