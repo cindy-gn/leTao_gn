@@ -1,7 +1,7 @@
 $(function () {
 
   // 功能使用 localStorage 完成, 使用数组存储
-  // localStorage( key, value ); 约定 key 键名: search_list
+  // localStorage( key5, value ); 约定 key 键名: search_list
 
   /* 
     以下3行代码, 在控制台执行, 可以添加假数据

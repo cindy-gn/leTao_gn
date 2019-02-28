@@ -1,0 +1,56 @@
+
+
+/* 搜索框 */
+.lt_search{
+    padding: 10px;
+    position: relative;
+}
+.lt_search .search_input{
+    height: 34px;
+    border: 1px solid #007AFF;
+    font-size: 12px;
+    margin: 0;
+    border-radius: 5px;
+
+}
+.lt_search .search_btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.lt_history{
+    padding: 10px;
+}
+.lt_history .lt_title{
+    height: 30px;
+    font-size: 12px;
+    color: #666;
+    line-height: 30px;
+}
+.lt_history .content ul{
+    border: 1px dashed red;
+}
+.lt_history .content ul li{
+    height: 30px;
+    font-size: 12px;
+    border-bottom: 1px dashed red;
+    line-height: 30px;
+    padding:0 10px;
+
+}
+.lt_history .content ul li:last-child{
+    border-bottom: none;
+}
+/* 因为删除的按钮没有水平居中 */
+.lt_history .content ul li i{
+    line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
