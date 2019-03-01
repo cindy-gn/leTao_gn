@@ -115,5 +115,12 @@ $(".search_btn").on("click",function(){
 
     //清空搜索框里面的值
     $(".search_input").val("");
+
+    //再点击搜索按钮的时候,获取到搜索框里面的内容拼接到地址栏的后面
+    //1.跳转页面到商品详情
+    //2.获取到搜索框里面的值  ==>上面已经获取到了txt  拼接到地址的后面
+    location.href="searchList.html?key="+txt;
+
+
     
 })

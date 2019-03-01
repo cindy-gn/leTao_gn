@@ -108,6 +108,63 @@ img{
 }
 
 
+/* 这个是搜索框,商品的详情页面和搜索页面都可以用到,提到公共的css里面 */
+/* 搜索框 */
+.lt_search{
+    padding: 10px;
+    position: relative;
+}
+.lt_search .search_input{
+    height: 34px;
+    border: 1px solid #007AFF;
+    font-size: 12px;
+    margin: 0;
+    border-radius: 5px;
+
+}
+.lt_search .search_btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+/* 这个是搜索框,商品的详情页面和主页  页面都可以用到,提到公共的css里面 */
+/* 商品部分 */
+.lt_product{
+    padding: 10px;
+}
+.lt_product li{
+    list-style: none;
+    width: 48%;
+    float: left;
+    margin-bottom: 20px;
+}
+.lt_product li:nth-child(2n-1){
+    margin-right: 4%;
+}
+.lt_product li a{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.lt_product li a .price{
+    color: red;
+}
+.lt_product li a .oldPrice{
+    text-decoration: line-through;
+}
+/* 给商品页面的图片设置高度 */
+.lt_product li img{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+.lt_product li .mui-ellipsis-2{
+    height: 40px;
+}
 
 
 

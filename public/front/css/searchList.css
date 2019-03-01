@@ -1,0 +1,40 @@
+
+/* 导航部分 */
+.lt_main .lt_sort{
+    height: 30px;
+    background-color: #EEEEEE;
+}
+.lt_main .lt_sort a{
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    color: #666;
+    font-size: 12px;
+}
+.lt_main .lt_sort a.current{
+    color: orange;
+}
+.loading{
+    height: 50px;
+    width: 50px;
+    border:3px  solid #069;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    animation: rotate 1s infinite;
+
+}
+/* 自定义动画 */
+/* 下面做动画的时候,就会覆盖前面原有的tansform -50%,在这里我们需要添加上 */
+@keyframes rotate{
+    from{
+        transform: translateX(-50%) rotate(0deg);
+    }
+    to{
+        transform: translateX(-50%) rotate(360deg);
+    }
+}

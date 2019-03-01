@@ -9,31 +9,6 @@
 .lt_nav li a {
     display: block;
 }
-/* 商品部分 */
-.lt_product{
-    padding: 10px;
-}
-.lt_product li{
-    width: 48%;
-    float: left;
-    margin-bottom: 20px;
-}
-.lt_product li:nth-child(2n+1){
-    margin-right: 4%;
-}
-.lt_product li a{
-    display: block;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-.lt_product li a .price{
-    color: red;
-}
-.lt_product li a .oldPrice{
-    text-decoration: line-through;
-}
 
 
 
